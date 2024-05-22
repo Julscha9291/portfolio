@@ -176,7 +176,6 @@ body {
    
    .about {
        text-align: center;
-       padding: 30px;
        margin:50px;
        margin-top: 30px;
        
@@ -184,6 +183,8 @@ body {
    
    .about  p{
        color:  #c4e0e4;
+       padding-left: 250px;
+       padding-right: 250px;
    }
    
    .headline{
