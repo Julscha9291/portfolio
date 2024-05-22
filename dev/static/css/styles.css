@@ -709,7 +709,7 @@ body {
            display: none;
        }
    
-       /* Zeige das mobile Menü, wenn die Klasse .open aktiv ist */
+       /* MEDIA QUERY */
       
    /* Stilisierung des mobilen Menüs */
    .mobile-menu {
@@ -724,7 +724,7 @@ body {
        transition: left 0.3s ease, opacity 0.3s ease; /
    }
    
-   /* Zeige das mobile Menü, wenn die Klasse .open aktiv ist */
+
    .mobile-menu.open {
        left: 0; /* Verschiebt das Menü von links herein */
        display: flex; /* Verwendet Flexbox */
@@ -762,7 +762,11 @@ body {
    }
    
    
-   
+   .about  p{
+    color:  #c4e0e4;
+    padding-left: 10px;
+    padding-right: 10px;
+}
    
    
        .time::after {
