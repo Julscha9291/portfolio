@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Portfolio-Website</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-**********" crossorigin="anonymous" />
     <link rel="icon" href="{% static 'icon.ico' %}" type="image/x-icon">
@@ -25,10 +25,20 @@
                 <li><a href="#experience">.experience</a></li>
                 <li><a href="#timeline">.projects</a></li>
                 <li><a href="#contact">.contact</a></li>
+                <!-- Sprachumschalter -->
+               
             </ul>
+            <ul class ="language">
+                <li class="language-selector">
+                    <a href="#" id="language-toggle"class="language-flag">
+                        <img src="{% static 'img/de.svg' %}" alt="Language" id="language-flag" />
+                    </a>
+                </li>
+        </ul>
         </nav>
         <nav>
         <div class="mobile-menu">
+            <button class="close-btn" id="close-btn">&times;</button>
             <ul>
                 <li><a href="#about">.about</a></li>
                 <li><a href="#stacks">.stacks</a></li>
@@ -45,20 +55,27 @@
 
     <section id="hero">
         <!-- Hinzufügen der Klasse "hero-content" -->
-            <h1 class="larger"><span class="highlight">Hi.</span></h1>
-            <h2>My name is Julian. </h2>
-            <div class="hero-content"> 
-            <h2 class="typewriter">I love to code. </h2>
+        <h1 class="larger"><span class="highlight" id="hero-hi">Hi.</span></h1>
+        <h2 id="hero-name">My name is Julian.</h2>
+        <div class="hero-content"> 
+            <h2 class="typewriter" id="hero-love">I love to code.</h2>
         </div>
     </section>
+    
+
     
     <section id="about" class="next-page">
         <div class="about">
             <h2 class="headline">.about</h2>
             <img src="{% static 'img/bild2.jpg' %}" alt="Bild" class="image"> 
-            <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <div class="about-text">
+            <p> 
+                I am a passionate software developer based in Dortmund. 
+                I gained my first programming experience and developed small applications while I was still in school. 
+                Since then, I have been fascinated by the boundless possibilities of programming. 
+                In my free time, I work on creative projects and continuously expand my knowledge to learn new technologies and enhance my skills.
             </p>
+            </div>
             <div class="social-icons">
                 <a href="mailto:j.schaepermeier91@gmail.com" class="social-icon">
                     <i class="fas fa-envelope"></i>
@@ -78,26 +95,41 @@
                 <li class="stack-item">
                     <div class="stack-content">
                         <h3><i class="fas fa-database"></i> Database</h3>
-                        <p>HANA SQL, SQLite</p>
+                        <ul class="stack-details">
+                            <li>HANA SQL</li>
+                            <li>SQLite</li>
+                        </ul>
                     </div>
                 </li>
                 <li class="stack-item">
                     <div class="stack-content">
                         <h3><i class="fab fa-python"></i> Backend </h3>
-                        <p>Django, Python</p>
+                        <ul class="stack-details">
+                            <li>Django</li>
+                            <li>Python</li>
+                        </ul>
                     </div>
                 </li>
                 <li class="stack-item">
                     <div class="stack-content">
                         <h3><i class="fas fa-chart-line"></i> Analysis</h3>
-                        <p>R, Python, SQL, MicroStrategy, Stata</p>
+                        <ul class="stack-details">
+                            <li>R</li>
+                            <li>Python</li>
+                            <li>MicroStrategy</li>
+                            <li>Stata</li>
+                        </ul>
                     </div>
                 </li>
 
                 <li class="stack-item">
                     <div class="stack-content">
                         <h3><i class="fab fa-html5"></i> Frontend </h3>
-                        <p>HTML, CSS </p>
+                        <ul class="stack-details">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>React (Javascript)</li>
+                    </ul>
                     </div>
                 </li>
        
@@ -146,7 +178,8 @@
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 October 2022 - Present
                             </span>                   
-                            <p>Courses</p>
+                            <p>Knowledge in: Object-Oriented Programming, Business Information Systems, 
+                                Technical and Theoretical Computer Science, Databases and IT Security</p>
                             <ul class="content-skills">
                                 <li>Java</li>
                                 <li>Python</li>
@@ -186,7 +219,7 @@
                             <div class="timeline-content-info">
                                 <span class="timeline-content-info-title">
                                     <i class="fa fa-certificate" aria-hidden="true"></i>
-                                    Wissenschaftliche Hilfkraft
+                                    Research Assistant
                                 </span>
                                 <span class="timeline-content-info-date">
                                     <i class="fa fa-calendar-o" aria-hidden="true"></i>
@@ -216,11 +249,10 @@
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                 October 2012 - September 2016
                             </span>
-                            <p>Courses</p>
+                            <p>Knowledge in: Business Informatics, Business Engineering and Method-Based Business Analysis</p>
                             <ul class="content-skills">
-                                <li>Computer Science</li>
-                                <li>E-Business</li>
-                                <li>Business Engineering </li>
+                                <li>R</li>
+                                <li>MS Excel</li>
                             </ul>
                         </div>
                     </div>
@@ -232,7 +264,7 @@
 
         </div>
 
-        <button> Complete CV</button>
+        <button id="complete-cv-button">Complete CV</button>
 
 
 
@@ -250,16 +282,26 @@
             <ul>
                 <li>
                     <div class="timeline-content">
-                        <h3>Birthday Homepage</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
-                        <span class="date">2020-2024</span>
+                        <h3>Task App</h3>
+                        <div class="wrapper">
+                            <div class="text">
+                                <p>Efficiently manage your tasks with our Kanban-inspired Task Manager. Organize tasks using intuitive drag-and-drop functionality, assign categories and users, and stay on top of your workload with a comprehensive dashboard. Real-time notifications keep you updated on important changes.</p>
+                            </div>
+                            <div class="project-img">
+                                <img src="{% static 'img/projekt1.png' %}" alt="Bild" class="image-project"> 
+                            </div>
+                        </div>
+                        <div class ="buttons"  >
+                        <button class ="project-button"> Live Demo</button>
+                        <button class ="code-button"> Code</button>
                     </div>
+                </div>
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3>KPI Dashboard</h3>
+                        <h3>Birthday Homepage</h3>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
-                        <span class="date">020-2024</span>
+                        <span class="date">2020-2024</span>
                     </div>
                 </li>
                 <li>
@@ -268,54 +310,42 @@
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
                         <span class="date">2020-2024</span>
                     </div>
-                </li>
-                <li>
-                    <div class="timeline-content">
-                        <h3> Python mini game </h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
-                        <span class="date">020-2024</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-content">
-                        <h3>Automations</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
-                        <span class="date">020-2024</span>
-                    </div>
-                </li>
-                
+                </li>               
             </ul>
         </div>
     </section>
     
     
-    <section id="contact" >
+    <section id="contact">
         <div class="contact">
-            <h2 class="headline">.contact</h2>
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit"> Send  </button>
+            <h2 class="headline">Contact</h2>
+            <div class="form-group">
+                <label for="name" id="contact-name-label">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" id="contact-email-label">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message" id="contact-message-label">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit" id="contact-submit-button">Send</button>
         </div>
     </section>
-    
-
 
 
     <footer>
         <div class="footer">
-            <p>&copy; 2024 Meine Portfolio-Website. Alle Rechte vorbehalten.</p>
+            <p>&copy; <span id="current-year"></span> Made by Julian with ❤️</p>
         </div>
     </footer>
+    
+    <script>
+        // JavaScript, um das aktuelle Jahr dynamisch einzufügen
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 
 
 
@@ -376,6 +406,11 @@ const activateTimelineItems = () => {
     });
 };
 
+
+
+
+
+
 // Event-Listener für das Scroll-Ereignis hinzufügen
 window.addEventListener('scroll', activateTimelineItems);
 
@@ -392,11 +427,17 @@ activateTimelineItems();
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var menuBtn = document.querySelector('.menu-btn');
-        var mobileMenu = document.querySelector('.mobile-menu'); // Wählen Sie das UL-Element aus dem mobilen Menü aus
+        var mobileMenu = document.querySelector('.mobile-menu');
+        var closeBtn = document.querySelector('#close-btn'); // Wählen Sie den Schließen-Button aus
     
         menuBtn.addEventListener('click', function(e) {   
             e.preventDefault(); // Verhindere das Standardverhalten des Links
             mobileMenu.classList.toggle('open'); // Fügt oder entfernt die Klasse .open, um das Menü zu öffnen oder zu schließen
+        });
+    
+        // Schließe das Menü, wenn der Schließen-Button angeklickt wird
+        closeBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('open');
         });
     
         // Schließe das Menü, wenn außerhalb des Menübereichs geklickt wird
@@ -418,10 +459,218 @@ activateTimelineItems();
         });
     });
     
-    
 
 </script>
 
+
+<script>
+    // Übersetzungen für jede Sprache
+    const translations = {
+        en: {
+            navbarAbout: ".about",
+            navbarStacks: ".stacks",
+            navbarExperience: ".experience",
+            navbarProjects: ".projects",
+            navbarContact: ".contact",
+            aboutHeadline: ".about",
+            aboutText: "I am a passionate software developer based in Dortmund. I gained my first programming experience and developed small applications while I was still in school. Since then, I have been fascinated by the boundless possibilities of programming. In my free time, I work on creative projects and continuously expand my knowledge to learn new technologies and enhance my skills.",
+            stacksHeadline: ".stacks",
+            experienceHeadline: ".experience",
+            projectsHeadline: ".projects",
+            contactHeadline: ".contact",
+            contactNameLabel: "Name:",
+            contactEmailLabel: "E-Mail:",
+            contactMessageLabel: "Message:",
+            contactSubmitButton: "Send",
+            project1Title: "Task App",
+            project1Description: "Efficiently manage your tasks with our Kanban-inspired Task Manager. Organize tasks using intuitive drag-and-drop functionality, assign categories and users, and stay on top of your workload with a comprehensive dashboard. Real-time notifications keep you updated on important changes.",
+            experienceItems: [
+                {
+                    company: "BARMER",
+                    position: "Data Analyst",
+                    date: "October 2020 - Present",
+                    description: "Reports and analytics",
+                    skills: ["SQL HANA", "MS Excel", "R", "Python"]
+                },
+                {
+                    company: "Fernuniversität Hagen",
+                    position: "Computer Science",
+                    date: "October 2022 - Present",
+                    description: "Knowledge in: Object-Oriented Programming, Business Information Systems, Technical and Theoretical Computer Science, Databases and IT Security",
+                    skills: ["Java", "Python", "SQL", "Assembler"]
+                },
+                {
+                    company: "Universität Duisburg-Essen",
+                    position: "Health Economics M.Sc.",
+                    date: "October 2016 - September 2020",
+                    description: "Knowledge in empirical Analysis of health economic related data",
+                    skills: ["Stata", "R"]
+                },
+                {
+                    company: "Universität Duisburg-Essen",
+                    position: "Research Assistant",
+                    date: "October 2016 - September 2020",
+                    description: "Data preparation, Data collecting and Data analysis",
+                    skills: ["Stata", "LaTeX", "R"]
+                },
+                {
+                    company: "Universität Duisburg-Essen",
+                    position: "Business Administration",
+                    date: "October 2012 - September 2016",
+                    description: "Knowledge in: Business Informatics, Business Engineering and Method-Based Business Analysis",
+                    skills: ["R", "Excel"]
+                }
+            ],
+            completeCVButton: "Complete CV"  ,// Button-Text auf Deutsch
+            heroHi: "Hi.",
+            heroName: "My name is Julian.",
+            heroLove: "I love to code." // Button-Text auf Englisch
+        },
+        de: {
+            navbarAbout: ".über mich",
+            navbarStacks: ".technologien",
+            navbarExperience: ".erfahrung",
+            navbarProjects: ".projekte",
+            navbarContact: ".kontakt",
+            aboutHeadline: ".über mich",
+            aboutText: "Ich bin ein leidenschaftlicher Softwareentwickler aus Dortmund. Bereits in der Schule konnte ich erste Programmiererfahrung sammeln und erste kleine Anwendungen entwickeln. Seitdem bin ich fasziniert von den grenzenlosen Möglichkeiten des Programmierens. In meiner Freizeit arbeite ich an kreativen Projekten und bilde mich kontinuierlich weiter, um stets neue Technologien zu erlernen und meine Fähigkeiten zu erweitern.",
+            stacksHeadline: ".technologien",
+            experienceHeadline: ".erfahrung",
+            projectsHeadline: ".projekte",
+            contactHeadline: ".kontakt",
+            contactNameLabel: "Name:",
+            contactEmailLabel: "E-Mail:",
+            contactMessageLabel: "Nachricht:",
+            contactSubmitButton: "Absenden",
+            project1Title: "Task App",
+            project1Description: "Verwalten Sie Ihre Aufgaben effizient mit unserem Kanban-inspirierten Aufgabenmanager. Organisieren Sie Aufgaben mit intuitiver Drag-and-Drop-Funktionalität, weisen Sie Kategorien und Benutzer zu und behalten Sie Ihre Arbeitslast mit einem umfassenden Dashboard im Blick. Echtzeit-Benachrichtigungen halten Sie über wichtige Änderungen auf dem Laufenden.",
+            experienceItems: [
+                {
+                    company: "BARMER",
+                    position: "Datenanalyst",
+                    date: "Oktober 2020 - Heute",
+                    description: "Berichtserstellung und Analysen",
+                    skills: ["SQL HANA", "MS Excel", "R", "Python"]
+                },
+                {
+                    company: "Fernuniversität Hagen",
+                    position: "Wirtschaftsinformatik",
+                    date: "Oktober 2022 - Heute",
+                    description: "Kenntnisse in: Objektorientierter Programmierung, Wirtschaftsinformatik, Technischer und Theoretischer Informatik, Datenbanken und IT-Sicherheit",
+                    skills: ["Java", "Python", "SQL", "Assembler"]
+                },
+                {
+                    company: "Universität Duisburg-Essen",
+                    position: "Health Economics M.Sc.",
+                    date: "Oktober 2016 - September 2020",
+                    description: "Kenntnisse in der empirischen Analyse gesundheitsökonomischer Daten",
+                    skills: ["Stata", "R"]
+                },
+                {
+                    company: "Universität Duisburg-Essen",
+                    position: "Wissenschaftlicher Mitarbeiter",
+                    date: "Oktober 2016 - September 2020",
+                    description: "Datenaufbereitung, Datensammlung, Datenanalyse",
+                    skills: ["Stata", "LaTeX", "R"]
+                },
+                {
+                    company: "Universität Duisburg-Essen",
+                    position: "Betriebswirtschaftslehre",
+                    date: "Oktober 2012 - September 2016",
+                    description: "Kenntnisse in: Wirtschaftsinformatik, Business Engineering und methodengestützte Unternehmensanalyse",
+                    skills: ["R", "Excel"]
+                }
+            ],
+            completeCVButton: "Kompletter CV" , // Button-Text auf Deutsch
+            heroHi: "Hi.",
+            heroName: "Mein Name ist Julian.",
+            heroLove: "Ich liebe es, zu programmieren."
+          
+        }
+    };
+
+    let currentLanguage = 'en'; // Standard-Sprache
+
+    function updateText() {
+        // Navbar Übersetzungen
+        document.querySelector('a[href="#about"]').textContent = translations[currentLanguage].navbarAbout;
+        document.querySelector('a[href="#stacks"]').textContent = translations[currentLanguage].navbarStacks;
+        document.querySelector('a[href="#experience"]').textContent = translations[currentLanguage].navbarExperience;
+        document.querySelector('a[href="#timeline"]').textContent = translations[currentLanguage].navbarProjects;
+        document.querySelector('a[href="#contact"]').textContent = translations[currentLanguage].navbarContact;
+
+        // About Section
+        document.querySelector('#about .headline').textContent = translations[currentLanguage].aboutHeadline;
+        document.querySelector('#about .about-text p').textContent = translations[currentLanguage].aboutText;
+
+        // Stacks Section
+        document.querySelector('#stacks .headline').textContent = translations[currentLanguage].stacksHeadline;
+
+        // Experience Section
+        document.querySelector('#experience .headline').textContent = translations[currentLanguage].experienceHeadline;
+
+        // Experience Items
+        const experienceContainers = document.querySelectorAll('#experience .container');
+        experienceContainers.forEach((container, index) => {
+            if (translations[currentLanguage].experienceItems[index]) {
+                const item = translations[currentLanguage].experienceItems[index];
+                container.querySelector('.cd-timeline-content h2').textContent = item.company;
+                container.querySelector('.timeline-content-info .timeline-content-info-title').innerHTML = 
+                    `<i class="fa fa-certificate" aria-hidden="true"></i> ${item.position}`;
+                container.querySelector('.timeline-content-info .timeline-content-info-date').innerHTML = 
+                    `<i class="fa fa-calendar-o" aria-hidden="true"></i> ${item.date}`;
+                container.querySelector('.cd-timeline-content p').textContent = item.description;
+                
+                const skillList = container.querySelector('.content-skills');
+                skillList.innerHTML = item.skills.map(skill => `<li>${skill}</li>`).join('');
+            }
+        });
+
+        // Projects Section
+        document.querySelector('#timeline .headline').textContent = translations[currentLanguage].projectsHeadline;
+        document.querySelector('#timeline .timeline-content h3').textContent = translations[currentLanguage].project1Title;
+        document.querySelector('#timeline .timeline-content p').textContent = translations[currentLanguage].project1Description;
+
+        // Contact Section
+        document.querySelector('#contact .headline').textContent = translations[currentLanguage].contactHeadline;
+        document.querySelector('#contact #contact-name-label').textContent = translations[currentLanguage].contactNameLabel;
+        document.querySelector('#contact #contact-email-label').textContent = translations[currentLanguage].contactEmailLabel;
+        document.querySelector('#contact #contact-message-label').textContent = translations[currentLanguage].contactMessageLabel;
+        document.querySelector('#contact #contact-submit-button').textContent = translations[currentLanguage].contactSubmitButton;
+        
+        // Button-Text
+        document.querySelector('#complete-cv-button').textContent = translations[currentLanguage].completeCVButton;
+
+        // Hero Section
+        document.querySelector('#hero #hero-hi').textContent = translations[currentLanguage].heroHi;
+        document.querySelector('#hero #hero-name').textContent = translations[currentLanguage].heroName;
+        document.querySelector('#hero #hero-love').textContent = translations[currentLanguage].heroLove;
+           
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const languageToggle = document.getElementById('language-toggle');
+        const languageFlag = document.getElementById('language-flag');
+    
+        languageToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+    
+            // Wechsel der Sprache
+            if (currentLanguage === 'en') {
+                languageFlag.src = "{% static 'img/gb.svg' %}";
+                currentLanguage = 'de';
+            } else {
+                languageFlag.src = "{% static 'img/de.svg' %}";
+                currentLanguage = 'en';
+            }
+
+            updateText(); // Text aktualisieren, wenn die Sprache geändert wird
+        });
+
+        // Initiales Update der Sprache beim Laden der Seite
+        updateText();
+    });
+</script>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

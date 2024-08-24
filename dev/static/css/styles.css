@@ -42,7 +42,7 @@ body {
    
    .right-nav {
        margin-left: auto; /* Rechtes Menü wird ganz rechts ausgerichtet */
-       margin-right: 20px; 
+       margin-right: -20px; 
    }
    
    .left-nav li.logo {
@@ -82,7 +82,38 @@ body {
        left: 50%;
        transform: translate(-50%, -50%);
    }
+
+   .language{
+    display: flex;
+    align-items: flex-start;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+}
+
+.language-flag {
+    margin: 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.language-flag img {
+    width: 32px; /* Größe der Flagge anpassen */
+    height: auto;
+    border-radius: 4px; /* Optional: leichte Abrundung */
+    transition: transform 0.3s ease; /* Für eine Hover-Animation */
+}
+
+.language-flag img:hover {
+    transform: scale(1.1); /* Flagge leicht vergrößern bei Hover */
+}
+
    
+
    
    .larger {
        font-size: 40px;
@@ -183,10 +214,14 @@ body {
    
    .about  p{
        color:  #c4e0e4;
-       padding-left: 250px;
-       padding-right: 250px;
+       font-size: 16px;
    }
-   
+
+   .about-text {
+    margin-left:150px;
+    margin-right:150px;
+   }
+
    .headline{
        color: #55d5d5;
        font-size: 40px;
@@ -254,6 +289,7 @@ body {
    
    .timeline p {
        margin-bottom: 10px;
+       font-size: 14px;
    }
    
    .timeline .date {
@@ -341,8 +377,17 @@ body {
        transform: translateY(0);
    }
    
-   
-   
+   .stack-details {
+    list-style-type: disc; /* Verwendet Punkt-Aufzählungszeichen */
+    padding-left: 20px; /* Abstand von der linken Seite */
+    margin: 0;
+}
+
+li {
+    display: list-item;
+    unicode-bidi: isolate;
+    font-size: 16px;
+}
    
    .contact {
        max-width: 600px;
@@ -398,14 +443,49 @@ body {
        background-color: #5fbed3;
    }
    
-   .projects {
-       text-align: center;
-       padding: 30px;
-       margin:50px;
-       margin-top: 30px;
-       
+   .buttons{
+display: flex;
+flex-direction: row;
+
    }
-   
+   .project-button, .code-button {
+    background-color:  #55d5d5;
+    color:  #15243a;
+    margin-left:0px;
+    margin:10px;
+}
+
+.project-button:hover .code-button:hover{
+    background-color: #5fbed3;
+}
+
+.code-button {
+    background-color: transparent;
+    border: 2px solid #55d5d5;   
+    color:  #15243a;
+}
+.wrapper {
+    display: flex;
+    align-items: center; /* Vertikale Ausrichtung */
+    justify-content: space-between; /* Abstand zwischen den Elementen */
+    margin-top: -30px;
+}
+
+.text {
+    width: 50%;
+    padding-right: 20px; /* Abstand zwischen Text und Bild */
+}
+
+.project-img {
+    width: 50%;
+    display: flex;
+    justify-content: center; /* Bild horizontal zentrieren */
+}
+
+.image-project {
+    width: 70%; /* Bild skaliert sich entsprechend dem Container */
+    height: auto; /* Bildhöhe passt sich der Breite an */
+}
    .social-icons {
        margin-top: 20px; /* Abstand nach dem Text */
    }
@@ -464,10 +544,6 @@ body {
        width: calc(40% - 20px); /* Breite des Containers */
      }
      
-     li {
-       display: list-item;
-       unicode-bidi: isolate;
-     }
      
      .headline {
        text-align: center;
@@ -716,9 +792,9 @@ body {
        position: fixed; /* Positionierung des Menüs */
        top: 0; /* Oben am Bildschirm */
        left: 0; /* Initial außerhalb des Bildschirms positionieren */
-       width: 50%; /* Breite des Menüs */
+       width: 100%; /* Breite des Menüs */
        height: 100%; /* Volle Höhe des Bildschirms */
-       background-color: #c4e0e4; /* Hintergrundfarbe des Menüs */
+       background-color:rgba(21, 36, 58, 0.9); /* Hintergrundfarbe des Menüs */
        z-index: 1000; /* Überlagert andere Inhalte */
        opacity: 1; /* Setze die Opazität auf 0 für die Fade-In-Animation */
        transition: left 0.3s ease, opacity 0.3s ease; /
@@ -726,11 +802,13 @@ body {
    
 
    .mobile-menu.open {
-       left: 0; /* Verschiebt das Menü von links herein */
-       display: flex; /* Verwendet Flexbox */
-       flex-direction: column; /* Stapelt die Elemente vertikal */
-       align-items: flex-start; /* Ausrichtung der Elemente am Anfang */
-   }
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
        
    /* Entferne den Aufzählungspunkt */
    .mobile-menu ul {
@@ -740,10 +818,11 @@ body {
    }
    
    .mobile-menu ul li {
-       font-size: 22px; /* Größe der Schrift ändern */
+       font-size: 28px; /* Größe der Schrift ändern */
        padding: 15px; /* Innenabstand ändern */
        margin-bottom: 10px;
        transition: background-color 0.3s; /* Hinzufügen einer Transition für den Hintergrund */
+       color: #fff;
    
    }
    
@@ -756,10 +835,22 @@ body {
    /* Entferne Unterstreichung für Links */
    .mobile-menu ul li a {
        text-decoration: none;
-       color: #15243a;
+       color: #fff;
        padding: 0; /* Padding entfernen */
        width: 50%;
    }
+
+   .close-btn {
+    position: fixed;
+    top: -60px;
+    right: -35px;
+    font-size: 50px;
+    background: none;
+    border: none;
+    color:  #fff;
+    cursor: pointer;
+    z-index: 1001;
+}
    
    
    .about  p{
@@ -812,8 +903,28 @@ body {
                width: 100%; /* Auf sehr kleinen Bildschirmen volle Breite einnehmen */
            }
    
-           
-           
+           .wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text {
+            width: 100%;
+            padding-right: 10px;
+        }
+        .buttons {
+            justify-content: center;  
        }
+
+       .image-project {
+        margin-bottom: 10px;
+        }
+
+        .about-text {
+            margin-left:30px;
+            margin-right:30px;
+           }
+
+    }
    
      
