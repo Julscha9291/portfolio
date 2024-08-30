@@ -25,8 +25,9 @@
                 <li><a href="#experience">.experience</a></li>
                 <li><a href="#timeline">.projects</a></li>
                 <li><a href="#contact">.contact</a></li>
-                <!-- Sprachumschalter -->
-               
+
+
+                <!-- Sprachumschalter -->         
             </ul>
             <ul class ="language">
                 <li class="language-selector">
@@ -36,6 +37,7 @@
                 </li>
         </ul>
         </nav>
+
         <nav>
         <div class="mobile-menu">
             <button class="close-btn" id="close-btn">&times;</button>
@@ -50,9 +52,6 @@
   
     </header>
     
-    
-    
-
     <section id="hero">
         <!-- Hinzufügen der Klasse "hero-content" -->
         <h1 class="larger"><span class="highlight" id="hero-hi">Hi.</span></h1>
@@ -61,8 +60,6 @@
             <h2 class="typewriter" id="hero-love">I love to code.</h2>
         </div>
     </section>
-    
-
     
     <section id="about" class="next-page">
         <div class="about">
@@ -86,8 +83,6 @@
         </div>
     </section>
     
-
-
     <section id="stacks">
         <div class="stacks">
             <h2 class="headline">.stacks</h2>
@@ -128,7 +123,8 @@
                         <ul class="stack-details">
                         <li>HTML</li>
                         <li>CSS</li>
-                        <li>React (Javascript)</li>
+                        <li>React</li>
+                        <li>Javascript</li>
                     </ul>
                     </div>
                 </li>
@@ -190,7 +186,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container left"> <!-- Hier das dritte Element -->
+            <div class="container left"> 
                 <div class="content">
                     <div class="cd-timeline-content">
                         <h2>Universität Duisburg-Essen</h2>
@@ -212,6 +208,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="container right">
                 <div class="content">           
                         <div class="cd-timeline-content">
@@ -256,26 +253,12 @@
                             </ul>
                         </div>
                     </div>
-                </div><!-- Inhalt des dritten Elements -->
+                </div>
             </div>
-            
-
-          
-
         </div>
-
         <button id="complete-cv-button">Complete CV</button>
-
-
-
-
-
     </section>
-    
-      
-      
-    
-    
+        
       <section id="timeline" >
         <div class="timeline">
             <h2 class="headline">.projects</h2>
@@ -293,22 +276,34 @@
                         </div>
                         <div class ="buttons"  >
                         <button class ="project-button"> Live Demo</button>
-                        <button class ="code-button"> Code</button>
+                        <button class="code-button" onclick="window.open('https://github.com/Julscha9291/Task', '_blank')">Code</button>
                     </div>
                 </div>
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3>Birthday Homepage</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
-                        <span class="date">2020-2024</span>
+                    <h3>Next Job - Webscraper for jobs.</h3>
+                    <div class="wrapper">
+                        <div class="text">
+                            <div class="project2">     
+                            <p> The Job Search Application "Next Job" is a web-based tool for automated job searching on Indeed and StepStone. It offers filtering by location, radius, job type, and date, providing a clear display and easy sorting and filtering of search results. </p>
+                        </div>
+                        </div>
+                        <div class="project-img">
+                            <img src="{% static 'img/projekt2.png' %}" alt="Bild" class="image-project"> 
+                        </div>
                     </div>
+                    <div class ="buttons">
+                    <button class ="project-button"> Live Demo</button>
+                    
+                    <button class="code-button" onclick="window.open('https://github.com/Julscha9291/Job_App', '_blank')">Code</button>
+                </div>
+            </div>
                 </li>
                 <li>
                     <div class="timeline-content">
-                        <h3>Webscraper for jobs in software development</h3>
+                        <h3>Health Bot</h3>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
-                        <span class="date">2020-2024</span>
                     </div>
                 </li>               
             </ul>
@@ -343,48 +338,31 @@
     </footer>
     
     <script>
-        // JavaScript, um das aktuelle Jahr dynamisch einzufügen
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
 
 
-
 <script>
-// Ziel-Element auswählen
-// Ziel-Elemente auswählen
 const stackItems = document.querySelectorAll('.stack-item');
 
-// Eine Funktion definieren, um die Sichtbarkeit der Stack-Elemente zu ändern
 const toggleStackItemsVisibility = () => {
     stackItems.forEach((item) => {
         const itemOffset = item.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-
-        // Wenn das Stack-Element in den sichtbaren Bereich des Bildschirms gelangt
         if (itemOffset < windowHeight * 0.8) {
-            // Füge eine Klasse hinzu, um die Sichtbarkeit zu ändern
             item.classList.add('visible');
         }
     });
 };
 
-// Ein Event-Listener hinzufügen, um die Sichtbarkeit der Stack-Elemente beim Scrollen zu aktualisieren
 window.addEventListener('scroll', toggleStackItemsVisibility);
-
-// Initialisieren Sie die Sichtbarkeit der Stack-Elemente beim Laden der Seite
 toggleStackItemsVisibility();
-
-
-
 </script>   
 
 <script>
-
-// Ziel-Element auswählen
 const timelineSection = document.getElementById('timeline');
 const timelineItems = document.querySelectorAll('#timeline .timeline-content');
 
-// Funktion zur Überprüfung, ob ein Element im sichtbaren Bereich ist
 const isInViewport = (element) => {
     const rect = element.getBoundingClientRect();
     return (
@@ -395,32 +373,18 @@ const isInViewport = (element) => {
     );
 };
 
-// Funktion zum Aktivieren der Timeline-Einträge
 const activateTimelineItems = () => {
     timelineItems.forEach((item, index) => {
         if (isInViewport(item) && !item.classList.contains('visible')) {
             setTimeout(() => {
                 item.classList.add('visible');
-            }, index * 200); // Zeitlicher Versatz für die Animation
+            }, index * 200); 
         }
     });
 };
 
-
-
-
-
-
-// Event-Listener für das Scroll-Ereignis hinzufügen
 window.addEventListener('scroll', activateTimelineItems);
-
-// Aktiviere Timeline-Einträge beim Laden der Seite
 activateTimelineItems();
-
-
-
-
-
 </script>    
 
 
@@ -428,43 +392,34 @@ activateTimelineItems();
     document.addEventListener('DOMContentLoaded', function() {
         var menuBtn = document.querySelector('.menu-btn');
         var mobileMenu = document.querySelector('.mobile-menu');
-        var closeBtn = document.querySelector('#close-btn'); // Wählen Sie den Schließen-Button aus
+        var closeBtn = document.querySelector('#close-btn'); 
     
         menuBtn.addEventListener('click', function(e) {   
             e.preventDefault(); // Verhindere das Standardverhalten des Links
-            mobileMenu.classList.toggle('open'); // Fügt oder entfernt die Klasse .open, um das Menü zu öffnen oder zu schließen
+            mobileMenu.classList.toggle('open'); 
         });
     
-        // Schließe das Menü, wenn der Schließen-Button angeklickt wird
         closeBtn.addEventListener('click', function() {
             mobileMenu.classList.remove('open');
         });
     
-        // Schließe das Menü, wenn außerhalb des Menübereichs geklickt wird
         document.addEventListener('click', function(event) {
-            // Überprüfen, ob der geklickte Bereich außerhalb des Menüs und des Menübuttons liegt
             if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-                // Schließe das Menü, wenn der Benutzer außerhalb des Menübereichs klickt
                 mobileMenu.classList.remove('open');
             }
         });
     
-        // Schließe das Menü, wenn ein Menüpunkt angeklickt wird
         var menuLinks = document.querySelectorAll('.mobile-menu a');
         menuLinks.forEach(function(link) {
             link.addEventListener('click', function() {
-                // Entferne die Klasse .open, um das Menü zu schließen
                 mobileMenu.classList.remove('open');
             });
         });
     });
-    
-
 </script>
 
-
 <script>
-    // Übersetzungen für jede Sprache
+    // Übersetzungen
     const translations = {
         en: {
             navbarAbout: ".about",
@@ -483,7 +438,9 @@ activateTimelineItems();
             contactMessageLabel: "Message:",
             contactSubmitButton: "Send",
             project1Title: "Task App",
-            project1Description: "Efficiently manage your tasks with our Kanban-inspired Task Manager. Organize tasks using intuitive drag-and-drop functionality, assign categories and users, and stay on top of your workload with a comprehensive dashboard. Real-time notifications keep you updated on important changes.",
+            project1Description: "Efficiently manage your tasks with the Kanban-inspired Task Manager. Organize tasks using intuitive drag-and-drop functionality, assign categories and users, and stay on top of your workload with a comprehensive dashboard. Real-time notifications keep you updated on important changes.",
+            project2Description: "The Job Search Application is a web-based tool for automated job searching on Indeed and StepStone. It offers filtering by location, radius, job type, and date, providing a clear display and easy sorting and filtering of search results.",
+        
             experienceItems: [
                 {
                     company: "BARMER",
@@ -521,10 +478,10 @@ activateTimelineItems();
                     skills: ["R", "Excel"]
                 }
             ],
-            completeCVButton: "Complete CV"  ,// Button-Text auf Deutsch
+            completeCVButton: "Complete CV"  ,
             heroHi: "Hi.",
             heroName: "My name is Julian.",
-            heroLove: "I love to code." // Button-Text auf Englisch
+            heroLove: "I love to code." 
         },
         de: {
             navbarAbout: ".über mich",
@@ -543,13 +500,14 @@ activateTimelineItems();
             contactMessageLabel: "Nachricht:",
             contactSubmitButton: "Absenden",
             project1Title: "Task App",
-            project1Description: "Verwalten Sie Ihre Aufgaben effizient mit unserem Kanban-inspirierten Aufgabenmanager. Organisieren Sie Aufgaben mit intuitiver Drag-and-Drop-Funktionalität, weisen Sie Kategorien und Benutzer zu und behalten Sie Ihre Arbeitslast mit einem umfassenden Dashboard im Blick. Echtzeit-Benachrichtigungen halten Sie über wichtige Änderungen auf dem Laufenden.",
+            project1Description: "Verwalten Sie Ihre Aufgaben effizient mit dem Kanban-inspirierten Aufgabenmanager. Organisieren Sie Aufgaben mit intuitiver Drag-and-Drop-Funktionalität, weisen Sie Kategorien und Benutzer zu und behalten Sie Ihre Arbeitslast mit einem umfassenden Dashboard im Blick. Echtzeit-Benachrichtigungen halten Sie über wichtige Änderungen auf dem Laufenden.",
+            project2Description: "Die Job Search Application ist eine webbasierte Anwendung zur automatisierten Jobsuche auf Indeed und StepStone. Mit Filtern für Standort, Radius, Jobtyp und Datum bietet sie eine übersichtliche Anzeige und ermöglicht eine einfache Sortierung und weitere Filterung der Suchergebnisse.",
             experienceItems: [
                 {
                     company: "BARMER",
                     position: "Datenanalyst",
                     date: "Oktober 2020 - Heute",
-                    description: "Berichtserstellung und Analysen",
+                    description: "Berichtserstellung und Analysen und Auswertung zum Vertriebsgeschäft",
                     skills: ["SQL HANA", "MS Excel", "R", "Python"]
                 },
                 {
@@ -581,7 +539,7 @@ activateTimelineItems();
                     skills: ["R", "Excel"]
                 }
             ],
-            completeCVButton: "Kompletter CV" , // Button-Text auf Deutsch
+            completeCVButton: "Kompletter CV" , 
             heroHi: "Hi.",
             heroName: "Mein Name ist Julian.",
             heroLove: "Ich liebe es, zu programmieren."
@@ -630,6 +588,8 @@ activateTimelineItems();
         document.querySelector('#timeline .headline').textContent = translations[currentLanguage].projectsHeadline;
         document.querySelector('#timeline .timeline-content h3').textContent = translations[currentLanguage].project1Title;
         document.querySelector('#timeline .timeline-content p').textContent = translations[currentLanguage].project1Description;
+        document.querySelector('#timeline .timeline-content .project2 p').textContent = translations[currentLanguage].project2Description;
+
 
         // Contact Section
         document.querySelector('#contact .headline').textContent = translations[currentLanguage].contactHeadline;
@@ -664,10 +624,8 @@ activateTimelineItems();
                 currentLanguage = 'en';
             }
 
-            updateText(); // Text aktualisieren, wenn die Sprache geändert wird
+            updateText(); 
         });
-
-        // Initiales Update der Sprache beim Laden der Seite
         updateText();
     });
 </script>
