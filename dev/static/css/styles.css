@@ -25,6 +25,18 @@ body {
        z-index: 1000; /* Z-Index, um die Navbar über anderen Inhalten zu platzieren */
    }
    
+
+   .response-container {
+    margin-top: 20px;
+    padding: 10px;
+    color: #cfdbd2;
+    font-size: 16px;
+}
+
+.response-message{
+    color: #c4e0e4
+}
+
    .left-nav, .right-nav, .mobile-menu {
        list-style-type: none;
        padding: 0;
