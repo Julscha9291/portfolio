@@ -147,7 +147,7 @@ STATIC_URL = '/static/'
 
 # List of additional locations of static files
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+ '/var/www/html/static/portfolio/',
 ]
 
 # Absolute filesystem path to the directory that will hold static files.
