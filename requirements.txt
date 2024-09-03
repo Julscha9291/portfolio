@@ -1,0 +1,8 @@
+Django==4.2.4
+djangorestframework==3.14.0  # Falls du Django REST Framework verwendest
+gunicorn==20.1.0  # Ein WSGI HTTP Server für UNIX, oft genutzt mit Django in Produktion
+psycopg2-binary==2.9.6  # Falls du PostgreSQL als Datenbank verwendest
+mysqlclient==2.1.1  # Falls du MySQL als Datenbank verwendest
+pillow==9.4.0  # Falls du Bildverarbeitung in Django benötigst
+django-environ==0.10.0  # Für die Handhabung von Umgebungsvariablen
+whitenoise==6.5.0  # Für das Servieren von statischen Dateien in Produktion
