@@ -6,3 +6,4 @@ mysqlclient==2.1.1  # Falls du MySQL als Datenbank verwendest
 pillow==9.4.0  # Falls du Bildverarbeitung in Django benötigst
 django-environ==0.10.0  # Für die Handhabung von Umgebungsvariablen
 whitenoise==6.5.0  # Für das Servieren von statischen Dateien in Produktion
+python-decouple==3.1
