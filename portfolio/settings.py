@@ -151,7 +151,7 @@ STATICFILES_DIRS = [
 ]
 
 # Absolute filesystem path to the directory that will hold static files.
-STATIC_ROOT = '/var/www/html/static/portfolio/'
+STATIC_ROOT = '/var/www/html/portfolio/static/'
 
 
 # Default primary key field type
