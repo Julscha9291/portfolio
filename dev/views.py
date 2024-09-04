@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.shortcuts import render
+from django.http import JsonResponse
 from django.core.mail import send_mail
 from .forms import ContactForm
 
@@ -19,14 +19,14 @@ def index(request):
                     recipient_list=['info@julian-schaepermeier.de'],
                     fail_silently=False,
                 )
-                request.session['contact_message'] = 'Thank you for your message!'  # Nachricht speichern
+                response_data = {'status': 'success', 'message': 'Thank you for your message!'}
             except Exception as e:
-                request.session['contact_message'] = f'An error occurred: {e}'
-
-            return redirect('/#contact')  # Zurück zur Kontaktsektion
-
+                response_data = {'status': 'error', 'message': f'An error occurred: {e}'}
+            
+            # Antwort als JSON zurückgeben
+            return JsonResponse(response_data)
+    
     else:
         form = ContactForm()
 
-    contact_message = request.session.pop('contact_message', '')  # Nachricht abrufen und löschen
-    return render(request, 'index.html', {'form': form, 'message': contact_message})
+    return render(request, 'index.html', {'form': form})

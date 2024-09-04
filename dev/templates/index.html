@@ -299,13 +299,7 @@
                     <button class="code-button" onclick="window.open('https://github.com/Julscha9291/Job_App', '_blank')">Code</button>
                 </div>
             </div>
-                </li>
-                <li>
-                    <div class="timeline-content">
-                        <h3>Health Bot</h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
-                    </div>
-                </li>               
+                </li>            
             </ul>
         </div>
     </section>
@@ -314,8 +308,8 @@
     <section id="contact">
         <div class="contact">
             <h2 class="headline">Contact</h2>
-
-            <form method="POST" action="">
+    
+            <form method="POST" action="" id="contact-form">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="name" id="contact-name-label">Name:</label>
@@ -331,15 +325,17 @@
                 </div>
                 <button type="submit" id="contact-submit-button">Send</button>
             </form>
-
+    
             <!-- Message area -->
-            {% if message %}
-                <div id="response-container" class="response-container">
-                    <p class="response-message" id="response-message">{{ message }}</p>
+                <div id="response-container" class="response-container" style="display: flex;justify-content: center;">
+                    <p class="response-message" id="response-message"></p>
                 </div>
-            {% endif %}
+               
         </div>
     </section>
+    
+
+    
     
 
 
@@ -556,9 +552,11 @@
                 }
     
                 updateText(); 
-            });
+            });            
             updateText();
         });
+
+
     </script>
 
     <script src="static/js/script.js"></script>

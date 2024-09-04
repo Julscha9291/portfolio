@@ -45,7 +45,7 @@ body {
    
    .left-nav {
        margin-right: auto; /* Linkes Menü wird ganz links ausgerichtet */
-       margin: 0 20px;
+       margin-left: 20px;
    }
    
    .left-nav li.logo a {
@@ -906,14 +906,10 @@ flex-direction: row;
            }
        
            .stack-item {
-               width: calc(50% - 10px); /* Auf kleinen Bildschirmen in zwei Spalten */
-               margin-bottom: 20px;
-               flex: 50%; /* Auf kleinen Bildschirmen gleichmäßig verteilen */
-           }
+            width: 100%; /* Volle Breite auf kleinen Bildschirmen */
+            flex: 100%; /* Jedes Element nimmt die gesamte Breite ein */
+        }
    
-           .stack-item {
-               width: 100%; /* Auf sehr kleinen Bildschirmen volle Breite einnehmen */
-           }
    
            .wrapper {
             display: flex;
@@ -937,6 +933,51 @@ flex-direction: row;
             margin-right:30px;
            }
 
+           .language {
+            margin-left: -35px;
+        }
+
+        .about {
+            margin: 10px;
+        }
+
+        .content {
+            margin-right: 10px; 
+        }
+
+        .project-img {
+            width: 70%;
+        }
+
+        .timeline .timeline-content {
+            margin-right: 30px;
+        }
+
     }
    
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+      
+        .stack-list {
+            justify-content: center; /* Auf kleinen Bildschirmen zentriert anzeigen */
+        }
+    
+        .stack-item {
+         width: 50%; /* Volle Breite auf kleinen Bildschirmen */
+         flex: 50%; /* Jedes Element nimmt die gesamte Breite ein */
+     }
+
+     .content {
+        margin-right: 10px; 
+    }
+
+    .project-img {
+        width: 70%;
+    }
+
+    .timeline .timeline-content {
+        margin-right: 30px;
+    }
+
+    }
      

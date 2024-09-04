@@ -105,3 +105,56 @@ menuLinks.forEach(function(link) {
     });
 });
 });
+
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Verhindert den Standard-Formularversand
+
+    var form = event.target;
+    var formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+        }
+    })
+    .then(response => response.json())  // Erwartet eine JSON-Antwort vom Server
+    .then(data => {
+        let successMessage, errorMessage;
+
+        if (currentLanguage === 'en') {
+            successMessage = 'Thank you for your message!';
+            errorMessage = 'There was a problem sending your message.';
+        } else if (currentLanguage === 'de') {
+            successMessage = 'Danke für die Nachricht!';
+            errorMessage = 'Es gab ein Problem beim Senden Ihrer Nachricht.';
+        }
+
+        if (data.status === 'success') {
+            document.getElementById('response-message').textContent = successMessage;
+            // Leeren der Formularfelder nach erfolgreichem Senden
+            form.reset();
+        } else {
+            document.getElementById('response-message').textContent = errorMessage;
+        }
+
+        document.getElementById('response-container').style.display = 'flex';
+    })
+    .catch(error => {
+        console.error('Fehler:', error);
+        let errorMessage;
+
+        if (currentLanguage === 'en') {
+            errorMessage = 'There was a problem sending your message.';
+        } else if (currentLanguage === 'de') {
+            errorMessage = 'Es gab ein Problem beim Senden Ihrer Nachricht.';
+        }
+
+        document.getElementById('response-message').textContent = errorMessage;
+        document.getElementById('response-container').style.display = 'flex';
+    });
+});
+
+// Übersetzungen und Sprachwechsel-Funktion bleiben gleich
