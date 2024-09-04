@@ -959,12 +959,12 @@ flex-direction: row;
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
       
         .stack-list {
-            justify-content: center; /* Auf kleinen Bildschirmen zentriert anzeigen */
+            justify-content: center;
         }
     
         .stack-item {
-         width: 50%; /* Volle Breite auf kleinen Bildschirmen */
-         flex: 50%; /* Jedes Element nimmt die gesamte Breite ein */
+         width: 50%; 
+         flex: 50%; 
      }
 
      .content {
