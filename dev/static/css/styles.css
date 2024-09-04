@@ -916,6 +916,7 @@ flex-direction: row;
             flex-direction: column;
         }
 
+        
         .text {
             width: 100%;
             padding-right: 10px;
@@ -927,7 +928,7 @@ flex-direction: row;
        .image-project {
         margin-bottom: 10px;
         }
-        
+
 
         .about-text {
             margin-left:30px;
