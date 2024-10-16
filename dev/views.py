@@ -15,8 +15,8 @@ def index(request):
                 send_mail(
                     subject=f"Contact Form: {name}",
                     message=f"Name: {name}\nEmail: {email}\nMessage: {message}",
-                    from_email='info@julian-schaepermeier.de',
-                    recipient_list=['info@julian-schaepermeier.de'],
+                    from_email='info@julianschaepermeier.com',
+                    recipient_list=['info@julianschaepermeier.com'],
                     fail_silently=False,
                 )
                 response_data = {'status': 'success', 'message': 'Thank you for your message!'}
