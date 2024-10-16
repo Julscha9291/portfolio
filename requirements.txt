@@ -2,5 +2,4 @@ Django==4.2.4
 python-decouple==3.1
 djangorestframework==3.14.0  # Falls du Django REST Framework verwendest
 gunicorn==20.1.0  # Ein WSGI HTTP Server für UNIX, oft genutzt mit Django in Produktion
-pillow==9.4.0  # Falls du Bildverarbeitung in Django benötigst
 django-environ==0.10.0  # Für die Handhabung von Umgebungsvariablen
