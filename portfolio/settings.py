@@ -41,7 +41,7 @@ ALLOWED_HOSTS = [
     '192.168.178.63',
     'raspberry-pi.local',
     '85.22.15.63',
-    'julian-schaepermeier.de',
+    'julianschaepermeier.com',
     '85.22.34.217',
     '192.168.178.1',
 ]
