@@ -44,6 +44,7 @@ ALLOWED_HOSTS = [
     'julianschaepermeier.com',
     '85.22.34.217',
     '192.168.178.1',
+    '87.106.104.223'
 ]
 
 
