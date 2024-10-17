@@ -42,6 +42,7 @@ ALLOWED_HOSTS = [
     'raspberry-pi.local',
     '85.22.15.63',
     'julianschaepermeier.com',
+    'task.julianschaepermeier.com',
     '85.22.34.217',
     '192.168.178.1',
     '87.106.104.223'
