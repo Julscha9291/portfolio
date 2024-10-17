@@ -3,7 +3,7 @@ import django
 from django.core.wsgi import get_wsgi_application
 import sys
 
-sys.path.append('/root/coding/portfolio') 
+sys.path.append('/home/coding/portfolio') 
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio.settings')
