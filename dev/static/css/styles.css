@@ -854,8 +854,8 @@ flex-direction: row;
 
    .close-btn {
     position: fixed;
-    top: -60px;
-    right: -35px;
+    top: -50px;
+    right: -5px;
     font-size: 50px;
     background: none;
     border: none;
@@ -888,7 +888,7 @@ flex-direction: row;
          left: 60px;
          border: medium solid white;
          border-width: 10px 10px 10px 0;
-         border-color: transparent white transparent transparent;
+         border-color: transparent #c4e0e4 transparent transparent;
        }
      
      /* Make sure all circles are at the same spot */
@@ -942,10 +942,6 @@ flex-direction: row;
 
         .about {
             margin: 10px;
-        }
-
-        .content {
-            margin-right: 10px; 
         }
 
         .project-img {
