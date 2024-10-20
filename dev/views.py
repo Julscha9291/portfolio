@@ -7,6 +7,13 @@ def index(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
+            # Überprüfen, ob das Honeypot-Feld leer ist
+            honeypot = form.cleaned_data.get('honeypot')
+            if honeypot:
+                # Wenn das Honeypot-Feld ausgefüllt ist, gehe nicht weiter
+                response_data = {'status': 'error', 'message': 'Spam detected!'}
+                return JsonResponse(response_data)
+
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
