@@ -128,6 +128,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'dev/static',
 ]
 
+
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
