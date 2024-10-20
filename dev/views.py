@@ -7,10 +7,8 @@ def index(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            # Überprüfen, ob das Honeypot-Feld leer ist
             honeypot = form.cleaned_data.get('honeypot')
             if honeypot:
-                # Wenn das Honeypot-Feld ausgefüllt ist, gehe nicht weiter
                 response_data = {'status': 'error', 'message': 'Spam detected!'}
                 return JsonResponse(response_data)
 
@@ -30,7 +28,6 @@ def index(request):
             except Exception as e:
                 response_data = {'status': 'error', 'message': f'An error occurred: {e}'}
             
-            # Antwort als JSON zurückgeben
             return JsonResponse(response_data)
     
     else:
