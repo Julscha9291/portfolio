@@ -32,49 +32,20 @@ document.getElementById("complete-cv-button").onclick = function() {
 document.getElementById("current-year").textContent = new Date().getFullYear();
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const items = document.querySelectorAll('.stack-item');
+const stackItems = document.querySelectorAll('.stack-item');
 
-  // Robuste Lösung: IntersectionObserver
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target); // nur einmal animieren
-        }
-      });
-    }, { threshold: 0.2 }); // 20% im Viewport
-
-    items.forEach(el => io.observe(el));
-    return;
-  }
-
-  // Fallback falls IO nicht verfügbar ist:
-  function getScrollParent(node) {
-    let el = node.parentElement;
-    while (el && el !== document.body) {
-      const s = getComputedStyle(el);
-      if (/(auto|scroll)/.test(s.overflowY) && el.scrollHeight > el.clientHeight) return el;
-      el = el.parentElement;
-    }
-    return window; // auf window zurückfallen
-  }
-
-  const scroller = items[0] ? getScrollParent(items[0]) : window;
-
-  const onScroll = () => {
-    const vh = window.innerHeight;
-    items.forEach(item => {
-      const top = item.getBoundingClientRect().top;
-      if (top < vh * 0.8) item.classList.add('visible');
-    });
-  };
-
-  // Beim ersten Rendern und beim Scrollen des richtigen Containers
-  (scroller === window ? window : scroller).addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+const toggleStackItemsVisibility = () => {
+stackItems.forEach((item) => {
+const itemOffset = item.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+if (itemOffset < windowHeight * 0.8) {
+    item.classList.add('visible');
+}
 });
+};
+
+window.addEventListener('scroll', toggleStackItemsVisibility);
+toggleStackItemsVisibility();
  
 
 
