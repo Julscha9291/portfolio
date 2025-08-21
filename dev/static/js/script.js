@@ -34,16 +34,18 @@ document.getElementById("current-year").textContent = new Date().getFullYear();
 
 const stackItems = document.querySelectorAll('.stack-item');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target); // nur einmal animieren
-    }
-  });
-}, { threshold: 0.2 }); // 20% sichtbar
+const toggleStackItemsVisibility = () => {
+stackItems.forEach((item) => {
+const itemOffset = item.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+if (itemOffset < windowHeight * 0.8) {
+    item.classList.add('visible');
+}
+});
+};
 
-stackItems.forEach(item => observer.observe(item));
+window.addEventListener('scroll', toggleStackItemsVisibility);
+toggleStackItemsVisibility();
  
 
 
