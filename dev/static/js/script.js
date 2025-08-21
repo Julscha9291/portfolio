@@ -32,7 +32,7 @@ document.getElementById("complete-cv-button").onclick = function() {
 document.getElementById("current-year").textContent = new Date().getFullYear();
 
 
-const stackItems = document.querySelectorAll('.stack-section');
+const stackItems = document.querySelectorAll('.stack-item');
 
 const toggleStackItemsVisibility = () => {
 stackItems.forEach((item) => {

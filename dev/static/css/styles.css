@@ -330,6 +330,11 @@ html {
        padding:10px;   
 }
    
+.stack-item.visible {
+       opacity: 1;
+       transform: translateY(0);
+}
+
 .stack-content {
        background-color: #c4e0e4;
        padding: 20px;
@@ -363,10 +368,7 @@ html {
        transform: translateY(0); 
 }
    
-.stack-item.visible {
-       opacity: 1;
-       transform: translateY(0);
-}
+
    
 .stack-details {
     list-style-type: disc; 
